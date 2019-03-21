@@ -15,33 +15,20 @@ namespace WishList
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
-<<<<<<< HEAD
         {
              services.AddMvc();
-=======
-        {   
-            services.AddMvc();
->>>>>>> 437ab1037493805de6a06940f7be3b7416ec9acd
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if(env.IsDevelopment())
-<<<<<<< HEAD
             {
                 app.UseDeveloperExceptionPage();
 
             }
             else
             {
-=======
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
->>>>>>> 437ab1037493805de6a06940f7be3b7416ec9acd
                 app.UseExceptionHandler("/Home/Error");
             }
            
