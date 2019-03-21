@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WishList.Data;
@@ -23,7 +24,13 @@ namespace WishList.Controllers
 
             return View("Index", model);
         }
-        [HttpPost]
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View("Create");
+        }
+
         public IActionResult Create(Models.Item item)
         {
             _context.Items.Add(item);
@@ -31,6 +38,7 @@ namespace WishList.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
         public IActionResult Delete(int id)
         {
             var item = _context.Items.FirstOrDefault(e => e.Id == id);
