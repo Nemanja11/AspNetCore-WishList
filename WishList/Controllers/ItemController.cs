@@ -23,7 +23,6 @@ namespace WishList.Controllers
 
             return View("Index", model);
         }
-
         [HttpPost]
         public IActionResult Create(Models.Item item)
         {
